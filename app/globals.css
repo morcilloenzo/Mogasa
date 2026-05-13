@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f7f8fa;
+  color: #0B1F3A;
+}
+
+.section-padding {
+  @apply py-20 lg:py-24;
+}
+
+.dark-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(11, 31, 58, 0.92),
+    rgba(11, 31, 58, 0.55)
+  );
+}
+
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-x 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
