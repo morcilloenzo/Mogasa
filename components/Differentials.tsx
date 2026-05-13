@@ -1,26 +1,31 @@
 import Container from "./ui/Container";
-import { Factory, Truck, Headset, ShieldCheck } from "lucide-react";
+import { ShieldCheck, Cog, Headset, MapPin, Leaf } from "lucide-react";
 
 const items = [
   {
-    title: "Producción Industrial",
-    body: "Planta propia y maquinaria de última generación.",
-    Icon: Factory
+    title: "Calidad Garantizada",
+    body: "Procesos certificados y control permanente en cada etapa.",
+    Icon: ShieldCheck
   },
   {
-    title: "Entrega Rápida",
-    body: "Respuesta ágil en Alto Valle, Valle Medio, Neuquén y Río Negro.",
-    Icon: Truck
+    title: "Tecnología Avanzada",
+    body: "Equipos de última generación para máxima eficiencia y precisión.",
+    Icon: Cog
   },
   {
-    title: "Atención Directa",
-    body: "Asesoramiento técnico y acompañamiento en todo el proceso.",
+    title: "Atención Personalizada",
+    body: "Acompañamos tu operación con soluciones a medida.",
     Icon: Headset
   },
   {
-    title: "Calidad Garantizada",
-    body: "Materiales de primera línea y procesos de control continuo.",
-    Icon: ShieldCheck
+    title: "Cobertura Regional",
+    body: "Logística propia y red de distribución en toda la Patagonia.",
+    Icon: MapPin
+  },
+  {
+    title: "Compromiso Sostenible",
+    body: "Producción responsable con el medio ambiente.",
+    Icon: Leaf
   }
 ];
 
@@ -28,20 +33,18 @@ export default function Differentials() {
   return (
     <section className="bg-white py-16 lg:py-20">
       <Container>
-        <div className="grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-5">
           {items.map(({ title, body, Icon }) => (
-            <div key={title} className="flex items-start gap-4">
-              <span className="shrink-0 text-primary">
-                <Icon size={36} strokeWidth={1.5} />
+            <div key={title} className="flex flex-col items-center text-center">
+              <span className="mb-4 flex size-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+                <Icon size={26} strokeWidth={1.8} />
               </span>
-              <div>
-                <h3 className="text-base font-extrabold uppercase tracking-wide text-primary">
-                  {title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                  {body}
-                </p>
-              </div>
+              <h3 className="text-sm font-extrabold uppercase tracking-wide text-primary">
+                {title}
+              </h3>
+              <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-gray-600">
+                {body}
+              </p>
             </div>
           ))}
         </div>

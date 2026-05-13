@@ -3,21 +3,17 @@
 import { useState } from "react";
 import Container from "./ui/Container";
 
-type Client = { name: string; slug: string };
+type Client = { name: string; logo: string };
 
 const clients: Client[] = [
-  { name: "PAI", slug: "pai" },
-  { name: "Moño Azul", slug: "mono-azul" },
-  { name: "Tres Ases", slug: "tres-ases" },
-  { name: "Klyma", slug: "klyma" },
-  { name: "Expofrut", slug: "expofrut" },
-  { name: "Kleppe", slug: "kleppe" },
-  { name: "Patagonian Fruits", slug: "patagonian-fruits" },
-  { name: "Salentein", slug: "salentein" },
-  { name: "Frigorífico Centro", slug: "frigorifico-centro" },
-  { name: "Prima Frut", slug: "prima-frut" },
-  { name: "Frutmar", slug: "frutmar" },
-  { name: "Pera del Valle", slug: "pera-del-valle" }
+  { name: "PAI", logo: "/clients/pai.jpg" },
+  { name: "Moño Azul", logo: "/clients/mono-azul.png" },
+  { name: "Tres Ases", logo: "/clients/tres-ases.png" },
+  { name: "Boschi", logo: "/clients/boschi.png" },
+  { name: "Cervi", logo: "/clients/cervi.gif" },
+  { name: "Battaglio", logo: "/clients/battaglio.png" },
+  { name: "Vicente", logo: "/clients/vicente.jpg" },
+  { name: "Frutas Joselia", logo: "/clients/frutas-joselia.jpg" }
 ];
 
 function ClientLogo({ client }: { client: Client }) {
@@ -31,7 +27,7 @@ function ClientLogo({ client }: { client: Client }) {
       {hasImage ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={`/clients/${client.slug}.png`}
+          src={client.logo}
           alt={client.name}
           loading="lazy"
           onError={() => setHasImage(false)}
@@ -72,7 +68,7 @@ export default function Clients() {
 
         <div className="marquee-track flex w-max gap-4 py-3">
           {stream.map((c, i) => (
-            <ClientLogo key={`${c.slug}-${i}`} client={c} />
+            <ClientLogo key={`${c.logo}-${i}`} client={c} />
           ))}
         </div>
       </div>

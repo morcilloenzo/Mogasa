@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import StatsBar from "@/components/StatsBar";
 import Differentials from "@/components/Differentials";
 import Products from "@/components/Products";
 import PlantGallery from "@/components/PlantGallery";
@@ -14,11 +15,12 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
-        <Differentials />
+        <StatsBar />
         <Products />
         <PlantGallery />
         <Clients />
         <LogisticsCoverage />
+        <Differentials />
         <FinalCTA />
       </main>
       <Footer />

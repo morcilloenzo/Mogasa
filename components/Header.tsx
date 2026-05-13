@@ -19,7 +19,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-border bg-white/95 backdrop-blur">
+    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-primary/95 backdrop-blur">
       <Container>
         <div className="flex h-16 items-center justify-between gap-4 lg:h-20 lg:gap-6">
           <a href="#" aria-label="Mogasa S.R.L." className="flex shrink-0 items-center">
@@ -38,7 +38,7 @@ export default function Header() {
               <a
                 key={it.label}
                 href={it.href}
-                className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/75 transition-colors hover:text-accent"
+                className="text-xs font-semibold uppercase tracking-[0.14em] text-white/75 transition-colors hover:text-accent"
               >
                 {it.label}
               </a>
@@ -57,7 +57,7 @@ export default function Header() {
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex size-10 items-center justify-center rounded-md text-primary transition-colors hover:bg-light lg:hidden"
+            className="inline-flex size-10 items-center justify-center rounded-md text-white transition-colors hover:bg-white/10 lg:hidden"
           >
             {open ? <X size={22} strokeWidth={2.2} /> : <Menu size={22} strokeWidth={2.2} />}
           </button>
@@ -66,7 +66,7 @@ export default function Header() {
 
       {/* Mobile drawer */}
       {open && (
-        <div className="border-t border-border bg-white lg:hidden">
+        <div className="border-t border-white/10 bg-primary lg:hidden">
           <Container>
             <nav className="flex flex-col py-2">
               {navItems.map((it) => (
@@ -74,7 +74,7 @@ export default function Header() {
                   key={it.label}
                   href={it.href}
                   onClick={() => setOpen(false)}
-                  className="border-b border-border py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-primary last:border-0 hover:text-accent"
+                  className="border-b border-white/10 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-white last:border-0 hover:text-accent"
                 >
                   {it.label}
                 </a>
